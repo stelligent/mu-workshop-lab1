@@ -7,4 +7,12 @@ spring:
   jackson:
     serialization:
       write_dates_as_timestamps: false
-
+  cloud:
+    bus:
+      enabled: false
+    discovery:
+      enabled: false
+    consul:
+      enabled: false
+      config:
+        enabled: false
