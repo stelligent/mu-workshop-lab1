@@ -1,6 +1,6 @@
 spring:
   application:
-    name: BananaService
+    name: banana-service
   cloud:
     bus:
       enabled: false
