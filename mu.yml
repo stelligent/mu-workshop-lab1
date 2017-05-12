@@ -6,6 +6,12 @@ service:
   port: 8080
   pathPatterns:
   - /*
+  database:
+    name: banana
+  environment:
+    SPRING_DATASOURCE_USERNAME: ${DatabaseMasterUsername}
+    SPRING_DATASOURCE_PASSWORD: ${DatabaseMasterPassword}
+    SPRING_DATASOURCE_URL: jdbc:mysql://${DatabaseEndpointAddress}:${DatabaseEndpointPort}/${DatabaseName}    
   pipeline:
     source:
       provider: GitHub
