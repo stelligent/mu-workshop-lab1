@@ -1,3 +1,13 @@
+environments:
+- name: dev
+  cluster:
+    keyName: mu-key
+    instanceType: m4.large
+- name: production
+  cluster:
+    keyName: mu-key
+    instanceType: m4.large
+
 service:
   name: banana-service
   port: 8080
