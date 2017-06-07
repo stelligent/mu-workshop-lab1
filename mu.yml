@@ -3,9 +3,6 @@ service:
   port: 8080
   pathPatterns:
   - /bananas
-  environment:
-    SPRING_CLOUD_CONSUL_HOST: 172.17.0.1
-    SPRING_CLOUD_CONSUL_DISCOVERY_REGISTER: 'false'
   pipeline:
     source:
       provider: CodeCommit
