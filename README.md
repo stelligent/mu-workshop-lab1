@@ -28,7 +28,7 @@ aws ec2 import-key-pair --key-name mu-key --public-key-material "$(cat ~/.ssh/id
 Let's start by pulling down the sample spring boot microservice:
 
 ```
-git clone git@github.com:cplee/mu-workshop-lab1.git banana-service
+git clone git@github.com:stelligent/mu-workshop-lab1.git banana-service
 
 cd banana-service
 ```
