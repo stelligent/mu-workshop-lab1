@@ -1,9 +1,12 @@
 spring:
-  application:
-    name: banana-service
-  jpa:
-    hibernate:
-      ddl-auto: none
-  jackson:
-    serialization:
-      write_dates_as_timestamps: false
+  application.name: banana-service
+  jpa.hibernate.ddl-auto: none
+  jackson.serialization.write_dates_as_timestamps: false
+  cloud.consul.discovery:
+    failFast: false
+    register: false
+
+---
+spring:
+  profiles: mu
+  cloud.consul.host: 172.17.0.1
