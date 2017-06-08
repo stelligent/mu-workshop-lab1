@@ -5,7 +5,10 @@ spring:
   cloud.consul.discovery:
     failFast: false
     register: false
+  cloud.discovery.client.composite-indicator.enabled: false
 
+management.health:
+  consul.enabled: false
 ---
 spring:
   profiles: mu
