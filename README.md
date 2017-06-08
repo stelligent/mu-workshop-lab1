@@ -1,5 +1,5 @@
 # Overview
-This repository contains a lab for the mu workshop.  The goal of this lab is to run a simple spring boot microservice on ECS.
+This repository contains a lab for the [mu](https://github.com/stelligent/mu) workshop.  The goal of this lab is to run a simple spring boot microservice on ECS.
 
 ![Architecture Diagram](architecture.png)
 
@@ -82,3 +82,41 @@ Now that our service is ready to deploy, let's create a pipeline for the service
 ```
 mu pipeline up
 ```
+
+# Explore and wait...
+While we wait for the pipeline to run, let's explore what mu created:
+
+* **CodePipeline console** - Open the AWS console and navigate to CodePipeline.  Check out the different stages and actions in the pipeline.
+** What is the difference between the *Artifact* and *Image* actions in the *Build* stage?
+** What `mu` commands are being run in the *Deploy* actions?
+
+* **mu cli** - Monitor the progress of the pipeline with `mu`
+** How can you view the logs from the CodeBuild executions [hint](https://github.com/stelligent/mu/wiki/Pipelines#commands)?
+** How can you see the status of the pipeline with `mu` [hint](https://github.com/stelligent/mu/wiki/Services#commands)?
+
+* **CloudFormation console** - Open the AWS console and navigate to CloudFormation.  Check out the different stacks and resources created.
+** What is the difference between the pipeline, vpc, cluster and service stacks?
+** Is it possible to target an existing VPC rather than have mu create the VPC [hint](https://github.com/stelligent/mu/wiki/Environments#configuration)?
+** Check out the subnets in the VPC console.  Are the ECS subnets public or private?  ELB subnets?
+
+* **ECS console** - Open the AWS console and navigate to ECS.  Check out the cluster that was created.
+** How many tasks are running for the service?
+** What % of the memory reservation is the service using?  Is that ok?
+** What does the memory and cpu reservation look like for the ECS instances?
+
+* **Service output** - Use `mu` to view the logs for your service.
+** Do you see any errors in the service logs [hint](https://github.com/stelligent/mu/wiki/Services#commands)?
+** What do the errors mean?
+
+* **EC2 instances** - Use the bastion host that `mu` created to login to your ECS instance
+** Get the bastion host and ECS instance IP via `mu env show dev`
+** Login to bastion host `ssh -i ~/.ssh/id_rsa ec2-user@<bastion-ip>`
+** Login to ECS instance
+** How many docker containers are running? (hint: `docker ps`)
+** How much CPU/memory are the containers using? (hint: `docker stats`)
+
+* **Test the service** - Once the pipeline is successfully deployed to the **dev** environment, test it!
+** Get the base URL of the ELB via `mu env show dev`
+** Test the service via `curl <baseurl>/bananas/`
+** What does the response look like?
+
