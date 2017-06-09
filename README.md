@@ -59,7 +59,7 @@ Use the [Environments](https://github.com/stelligent/mu/wiki/Environments#config
 # Configure service
 Use the [Services](https://github.com/stelligent/mu/wiki/Services#configuration) section of the wiki to configure the following for your service:
 
-* Path pattern: update to only route `/bananas/*`
+* Path pattern: update to only route `/bananas*`
 
 # Configure pipeline
 Use the [Pipelines](https://github.com/stelligent/mu/wiki/Pipelines#configuration) section of the wiki to configure the following for your service pipeline:
