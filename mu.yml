@@ -3,6 +3,8 @@ environments:
   cluster:
     keyName: mu-key
     instanceType: m4.large
+  discovery:
+    provider: consul
 - name: production
   cluster:
     keyName: mu-key
