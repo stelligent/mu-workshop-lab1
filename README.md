@@ -99,11 +99,6 @@ While we wait for the pipeline to run, let's explore what mu created:
     * Is it possible to target an existing VPC rather than have mu create the VPC [hint](https://github.com/stelligent/mu/wiki/Environments#configuration)?
     * Check out the subnets in the VPC console.  Are the ECS subnets public or private?  ELB subnets?
 
-* **ECS console** - Open the AWS console and navigate to ECS.  Check out the cluster that was created.
-    * How many tasks are running for the service?
-    * What % of the memory reservation is the service using?  Is that ok?
-    * What does the memory and cpu reservation look like for the ECS instances?
-
 * **Service output** - Use `mu` to view the logs for your service.
     * Do you see any errors in the service logs [hint](https://github.com/stelligent/mu/wiki/Services#commands)?
     * What do the errors mean?
