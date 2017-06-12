@@ -13,6 +13,7 @@ environments:
 service:
   name: banana-service
   port: 8080
+  desiredCount: 1
   pathPatterns:
   - /bananas*
   pipeline:
